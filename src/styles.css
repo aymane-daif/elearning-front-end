@@ -4,6 +4,23 @@ body {
   background-color: #1a202c;
   color: #edf2f7;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #edf2f7;
+}
+p,
+span,
+a {
+  color: #a0aec0;
+}
+#btn,
+#btn span {
+  color: #1a202c;
+}
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;

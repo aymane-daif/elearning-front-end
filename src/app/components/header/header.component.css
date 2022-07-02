@@ -1,0 +1,28 @@
+@font-face {
+  font-family: Bitwise;
+  src: url(../../../assets/Bitwise.ttf);
+}
+mat-toolbar {
+  background: #252f42;
+}
+h2 {
+  font-family: Bitwise;
+}
+.header-spacer {
+  flex: 1 1 auto;
+}
+.header-icon.search-icon {
+  margin-right: 2rem;
+}
+
+@media (max-width: 500px) {
+  .header-icon.search-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 300px) {
+  h2 {
+    font-size: 14px;
+  }
+}
