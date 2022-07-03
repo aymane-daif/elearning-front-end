@@ -3,6 +3,7 @@ body {
   height: 100%;
   background-color: #1a202c;
   color: #edf2f7;
+  box-sizing: border-box;
 }
 h1,
 h2,
@@ -14,7 +15,10 @@ h6 {
 }
 p,
 span,
-a {
+a,
+mat-form-field input,
+mat-form-field input::placeholder,
+mat-form-field mat-label {
   color: #a0aec0;
 }
 #btn,

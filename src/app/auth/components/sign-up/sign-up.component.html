@@ -1,9 +1,138 @@
-<div class="signup">
+<div class="signup flex">
   <div class="left">
-    <h1>Hello from left sign up component</h1>
     <app-terminal></app-terminal>
   </div>
   <div class="right">
-    <h1>Hello from right sign up component</h1>
+    <div class="right--content">
+      <h1>Join our academy to code real life like projects</h1>
+      <form novalidate [formGroup]="signUpForm">
+        <div class="form--content">
+          <div class="flex" formGroupName="name">
+            <div class="semi-input">
+              <mat-form-field appearance="fill">
+                <mat-label>Enter your first name</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  formControlName="firstName"
+                  placeholder="John"
+                  required
+                />
+              </mat-form-field>
+            </div>
+            <div class="semi-input">
+              <mat-form-field appearance="fill">
+                <mat-label>Enter your last name</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  formControlName="lastName"
+                  placeholder="Doe"
+                  required
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="full-input">
+            <mat-form-field appearance="fill">
+              <mat-label>Enter your email</mat-label>
+              <input
+                matInput
+                placeholder="coder@example.com"
+                formControlName="email"
+                required
+              />
+              <mat-error *ngIf="false">Email wrong</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="flex" formGroupName="pass">
+            <div class="semi-input">
+              <mat-form-field appearance="fill">
+                <mat-label>Enter your password</mat-label>
+                <input
+                  matInput
+                  [type]="hidePassword ? 'password' : 'text'"
+                  formControlName="password"
+                />
+                <button
+                  mat-icon-button
+                  matSuffix
+                  (click)="hidePassword = !hidePassword"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hidePassword"
+                >
+                  <mat-icon>{{
+                    hidePassword ? "visibility_off" : "visibility"
+                  }}</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+
+            <div class="semi-input">
+              <mat-form-field appearance="fill">
+                <mat-label>Verify your password</mat-label>
+                <input
+                  matInput
+                  [type]="hideVerifyPassword ? 'password' : 'text'"
+                  formControlName="verifyPassword"
+                />
+                <button
+                  mat-icon-button
+                  matSuffix
+                  (click)="hideVerifyPassword = !hideVerifyPassword"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hideVerifyPassword"
+                >
+                  <mat-icon>{{
+                    hideVerifyPassword ? "visibility_off" : "visibility"
+                  }}</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="flex">
+            <div class="semi-input">
+              <mat-form-field appearance="fill">
+                <mat-label>Choose your date of birth</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="picker"
+                  formControlName="birthDate"
+                />
+
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="picker"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="semi-input">
+              <mat-form-field appearance="fill">
+                <mat-label>Please select a role</mat-label>
+                <mat-select name="role" formControlName="role">
+                  <mat-option *ngFor="let r of roles" [value]="r">
+                    {{ r }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <span class="terms">
+            By signing up, you agree to NullPointerException Academy's Terms of
+            Service & Privacy Policy.
+          </span>
+          <br />
+          <button mat-raised-button color="primary" id="btn">Sign up</button>
+          <h4>Or sign up using:</h4>
+          <div class="icons">
+            <app-oauth-icons></app-oauth-icons>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
