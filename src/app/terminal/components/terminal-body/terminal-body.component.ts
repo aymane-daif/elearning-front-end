@@ -25,20 +25,23 @@ export class TerminalBodyComponent implements OnInit {
       this.outputCommand =
         commands.find((command) => command.key === this.userCommand)?.value ||
         '';
-      console.log(this.outputCommand);
-      this.history = [
-        ...this.history,
-        {
-          key: this.userCommand,
-          outputCommand: this.outputCommand,
-        },
-      ];
-      this.userCommand = '';
-      console.log(this.userCommand, 'this.userCommand');
-      console.log(
-        this.input?.nativeElement.value,
-        'this.input?.nativeElement.value'
-      );
+      if (this.userCommand === 'date') {
+        this.outputCommand += new Date().toLocaleString();
+      }
+    } else {
+      this.outputCommand =
+        '"' +
+        this.userCommand +
+        '"' +
+        commands.find((command) => command.key === 'not-supported')?.value;
     }
+    this.history = [
+      ...this.history,
+      {
+        key: this.userCommand,
+        outputCommand: this.outputCommand,
+      },
+    ];
+    this.userCommand = '';
   }
 }

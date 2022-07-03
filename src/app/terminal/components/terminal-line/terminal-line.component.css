@@ -1,6 +1,9 @@
 span {
   font-size: 18px;
 }
+.terminal-line {
+  margin-bottom: 0.5rem;
+}
 .terminal-line--content {
   display: flex;
   align-items: center;

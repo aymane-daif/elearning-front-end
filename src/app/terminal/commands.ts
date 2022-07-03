@@ -40,22 +40,28 @@ export const commands = [
   },
   {
     key: 'date',
-    value: 'Display the current date',
+    value: `The current date is: `,
   },
   {
     key: 'whoami',
-    value: 'Display the current user',
+    value: 'NullPointerException Academy',
   },
   {
     key: 'github',
-    value: 'Go to my github profile',
+    value: 'Go to my github profile: https://github.com/aymane-daif/',
   },
   {
     key: 'email',
-    value: 'Go to my email',
+    value: 'Here is my email: aymaned345@gmail.com',
   },
   {
     key: 'linkedin',
-    value: 'Go to my linkedin profile',
+    value:
+      'Go to my linkedin profile: https://www.linkedin.com/in/aymane-daif-998b90184/',
+  },
+  {
+    key: 'not-supported',
+    value:
+      ' is not supported as an internal or external command, type "help" to see all supported commands',
   },
 ];

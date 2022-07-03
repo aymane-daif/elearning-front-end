@@ -21,9 +21,10 @@ input,
   border: 0;
   outline: none;
   color: rgb(235, 219, 178);
-  font-size: 18px;
+  font-size: 17px;
   font-family: CascadiaCode, monospace;
 }
+
 .terminal-line--output {
   white-space: pre-wrap;
   color: #d984a0;
