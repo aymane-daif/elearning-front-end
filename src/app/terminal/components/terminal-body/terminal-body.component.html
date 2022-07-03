@@ -9,9 +9,14 @@
     <input
       type="text"
       spellcheck="false"
+      autocapitalize="off"
+      autocomplete="off"
+      autocorrect="off"
       #cursor
       name="userCommand"
       [(ngModel)]="userCommand"
+      (keyup.arrowup)="showPreviousCommand($event)"
+      (keyup.arrowdown)="showNextCommand($event)"
       (keyup.enter)="submitUserCommand(cursor.value)"
     />
   </app-terminal-line>

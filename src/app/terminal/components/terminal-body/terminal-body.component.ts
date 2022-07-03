@@ -12,16 +12,49 @@ export class TerminalBodyComponent implements OnInit {
   outputCommand: string = '';
   userCommand = '';
   history: any = [];
+  counter: number = 0;
+  isNewCommand: boolean = false;
   constructor() {}
   ngOnInit(): void {}
   ngAfterViewInit() {
     this.input?.nativeElement.focus();
   }
 
+  showNextCommand(event: any) {
+    if (this.counter > 0) {
+      this.counter--;
+    }
+    this.isNewCommand = false;
+
+    if (this.counter === 0) {
+      this.userCommand = '';
+    } else {
+      this.userCommand = this.history[this.history.length - this.counter].key;
+    }
+  }
+
+  showPreviousCommand(event: any) {
+    let pointer = this.history.length - 1;
+    if (this.history.length - this.counter >= 0) {
+      this.counter++;
+    }
+    if (this.isNewCommand) {
+      this.counter = 1;
+    }
+    pointer = this.history.length - this.counter;
+    if (pointer === -1) {
+      this.userCommand = '';
+    } else {
+      this.userCommand = this.history[pointer].key;
+    }
+    this.isNewCommand = false;
+  }
+
   submitUserCommand(userCommand: string) {
     this.userCommand = userCommand.toLowerCase().trim();
 
     if (supportedCommands.includes(this.userCommand)) {
+      //supported command
       this.outputCommand =
         commands.find((command) => command.key === this.userCommand)?.value ||
         '';
@@ -29,12 +62,14 @@ export class TerminalBodyComponent implements OnInit {
         this.outputCommand += new Date().toLocaleString();
       }
     } else {
+      // not a supported command
       this.outputCommand =
         '"' +
         this.userCommand +
         '"' +
         commands.find((command) => command.key === 'not-supported')?.value;
     }
+    // add command{key, value} to history
     this.history = [
       ...this.history,
       {
@@ -42,6 +77,8 @@ export class TerminalBodyComponent implements OnInit {
         outputCommand: this.outputCommand,
       },
     ];
+    this.isNewCommand = true;
+    //clear user command
     this.userCommand = '';
   }
 }
