@@ -8,6 +8,28 @@ mat-toolbar {
 h2 {
   font-family: Bitwise;
 }
+h2::before {
+  content: "{";
+  display: inline-block;
+  width: 1px;
+  height: 1px;
+  background: #252f42;
+  position: relative;
+  top: -3px;
+  left: -12px;
+  color: #81e6d9;
+}
+h2::after {
+  content: "}";
+  display: inline-block;
+  width: 1px;
+  height: 1px;
+  background: #252f42;
+  position: relative;
+  top: 0px;
+  right: -3px;
+  color: #81e6d9;
+}
 .header-spacer {
   flex: 1 1 auto;
 }

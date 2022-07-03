@@ -17,6 +17,9 @@
   letter-spacing: 3px;
   word-spacing: 12px;
   text-shadow: -2px -2px 0px #242020, 4px 4px 0px #242020, 7px 7px 0px #7e7777;
+  animation: bottomToTop 2s;
+  animation-direction: normal;
+  animation-iteration-count: 1;
 }
 .right .right--content {
   width: 90%;
@@ -32,9 +35,12 @@
   width: 98%;
 }
 form {
+  animation-name: bottomToTop;
+  animation-duration: 3s;
   background: #252c3a;
   padding: 1.5rem 0.75rem;
   border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 .form--content {
   margin-left: 10px;
@@ -46,4 +52,15 @@ form {
 h4 {
   margin-top: 20px;
   margin-bottom: 0px;
+}
+@keyframes bottomToTop {
+  0% {
+    transform: translateY(200%);
+  }
+  90% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
