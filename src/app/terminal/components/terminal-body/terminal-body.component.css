@@ -14,6 +14,21 @@
   padding: 10px 20px;
   font-family: PowerlineExtraSymbols, monospace;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #2e3440 #151824;
+}
+.terminal-body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+.terminal-body::-webkit-scrollbar-track {
+  background: #151824; /* color of the tracking area */
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+  background-color: #2e3440; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid #151824; /* creates padding around scroll thumb */
 }
 input,
 .previous-command {
