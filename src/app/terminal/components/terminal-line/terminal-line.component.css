@@ -1,0 +1,16 @@
+span {
+  font-size: 18px;
+}
+.terminal-line--content {
+  display: flex;
+  align-items: center;
+}
+.terminal-line--content-prompt-user {
+  color: #e3979d;
+}
+.terminal-line--content-prompt-host {
+  color: #aad9e0;
+}
+.terminal-line--content-prompt-path {
+  color: #d0b47c;
+}

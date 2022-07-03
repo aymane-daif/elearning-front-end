@@ -1,0 +1,18 @@
+<div class="terminal-line">
+  <div class="terminal-line--content">
+    <div class="terminal-line--content-prompt">
+      <span class="terminal-line--content-prompt-emojis">🎄</span>
+      <span class="terminal-line--content-prompt-user">root</span>
+      <span class="terminal-line--content-prompt-host">@academy</span>
+
+      <span class="terminal-line--content-prompt-path">~</span>
+      <span class="terminal-line--content-prompt-emojis">✨</span>
+      <span class="terminal-line--content-prompt-id">$</span>
+    </div>
+    <div class="terminal-line--content-command">
+      <ng-content></ng-content>
+    </div>
+  </div>
+
+  <ng-content select=".terminal-line--output"></ng-content>
+</div>

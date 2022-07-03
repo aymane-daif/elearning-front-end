@@ -1,0 +1,35 @@
+.terminal-header {
+  background-color: #2e3440;
+  height: 2.5rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+.top-left,
+.center {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 1.25rem;
+}
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 0 0.15rem;
+}
+.circle.red {
+  background-color: #e15f41;
+}
+.circle.yellow {
+  background-color: #f3c153;
+}
+.circle.green {
+  background-color: #62c25b;
+}
+
+.center mat-icon {
+  margin-left: 7rem;
+  margin-right: 0.25rem;
+}

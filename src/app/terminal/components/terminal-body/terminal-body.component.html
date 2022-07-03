@@ -1,0 +1,18 @@
+<div class="terminal-body">
+  <app-terminal-line *ngFor="let cmd of history">
+    <div class="previous-command">{{ cmd.key }}</div>
+    <div class="terminal-line--output">
+      {{ cmd.outputCommand }}
+    </div>
+  </app-terminal-line>
+  <app-terminal-line>
+    <input
+      type="text"
+      spellcheck="false"
+      #cursor
+      name="userCommand"
+      [(ngModel)]="userCommand"
+      (keyup.enter)="submitUserCommand(cursor.value)"
+    />
+  </app-terminal-line>
+</div>

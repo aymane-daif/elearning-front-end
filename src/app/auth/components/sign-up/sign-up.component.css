@@ -1,0 +1,6 @@
+.signup {
+  display: flex;
+}
+.signup * {
+  flex: auto;
+}
