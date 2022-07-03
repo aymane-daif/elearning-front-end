@@ -12,6 +12,7 @@ export class TerminalBodyComponent implements OnInit {
   outputCommand: string = '';
   userCommand = '';
   history: any = [];
+  visibleHistory: any = [];
   counter: number = 0;
   isNewCommand: boolean = false;
   constructor() {}
@@ -61,6 +62,9 @@ export class TerminalBodyComponent implements OnInit {
       if (this.userCommand === 'date') {
         this.outputCommand += new Date().toLocaleString();
       }
+      if (this.userCommand === 'clear') {
+        this.visibleHistory = [];
+      }
     } else {
       // not a supported command
       this.outputCommand =
@@ -77,6 +81,15 @@ export class TerminalBodyComponent implements OnInit {
         outputCommand: this.outputCommand,
       },
     ];
+
+    this.visibleHistory = [
+      ...this.visibleHistory,
+      {
+        key: this.userCommand,
+        outputCommand: this.outputCommand,
+      },
+    ];
+
     this.isNewCommand = true;
     //clear user command
     this.userCommand = '';

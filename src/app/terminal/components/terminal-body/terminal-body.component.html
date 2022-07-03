@@ -1,5 +1,5 @@
 <div class="terminal-body">
-  <app-terminal-line *ngFor="let cmd of history">
+  <app-terminal-line *ngFor="let cmd of visibleHistory">
     <div class="previous-command">{{ cmd.key }}</div>
     <div class="terminal-line--output">
       {{ cmd.outputCommand }}
