@@ -14,9 +14,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { OauthIconsComponent } from './components/oauth-icons/oauth-icons.component';
 import { HttpClientModule } from '@angular/common/http';
+import { JoinUsSectionComponent } from './components/join-us-section/join-us-section.component';
 
 @NgModule({
-  declarations: [SignUpComponent, OauthIconsComponent],
+  declarations: [SignUpComponent, OauthIconsComponent, JoinUsSectionComponent],
   imports: [
     CommonModule,
     TerminalModule,

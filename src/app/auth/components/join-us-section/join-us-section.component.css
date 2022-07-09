@@ -1,0 +1,43 @@
+section {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+section .left h2 {
+  font-size: 2.75rem;
+  margin-top: 5rem;
+}
+
+section .left p {
+  font-size: 1.1rem;
+  margin: 2rem 0;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  line-height: 1.5;
+}
+section .box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+section .box h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: 0;
+}
+section .box span {
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  display: inline-block;
+}
+section .box .img-container {
+  margin-right: 0.75rem;
+}
+section .box img {
+  width: 3.5rem;
+}
+section .right img {
+  width: 100%;
+}
